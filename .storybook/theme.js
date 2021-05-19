@@ -1,5 +1,6 @@
 import { create } from '@storybook/theming'
 const tailwindColors = require('tailwindcss/colors')
+import logo from '../src/stories/static/logo.svg'
 
 export default create({
   base: 'dark',
@@ -34,5 +35,5 @@ export default create({
 
   brandTitle: 'Nest UI',
   brandUrl: 'https://ui.nest.land',
-  brandImage: 'https://avatars.githubusercontent.com/u/65864058?s=36&v=4',
+  brandImage: logo,
 })
