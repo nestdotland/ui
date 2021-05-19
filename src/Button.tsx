@@ -17,7 +17,7 @@ export interface Props {
   /**
    * The size of the button
    */
-  size?: 'larger' | 'large' | 'regular' | 'small' | 'pagination'
+  size?: 'larger' | 'large' | 'regular' | 'small'
   /**
    * Shows only one icon inside the button; defaults to left
    */
@@ -33,7 +33,7 @@ export interface Props {
   /**
    * The style of the button
    */
-  layout?: 'primary' | 'outline' | 'link' | '__dropdownItem'
+  layout?: 'primary' | 'outline' | 'link' | 'blank'
   /**
    * The accent color of the badge
    */
@@ -70,8 +70,7 @@ type Ref = ReactNode | HTMLElement | string
 const Button = React.forwardRef<Ref, ButtonProps>(function Button(props, ref) {
   const {
     tag = 'button',
-    // Fix https://github.com/estevanmaito/windmill-react-ui/issues/7
-    type = tag === 'button' ? 'button' : undefined,
+    type = tag === 'button' ? 'button' : undefined, // patch for https://github.com/estevanmaito/windmill-react-ui/issues/7
     disabled = false,
     size = 'regular',
     layout = 'primary',
@@ -108,18 +107,12 @@ const Button = React.forwardRef<Ref, ButtonProps>(function Button(props, ref) {
     large: button.size.large,
     regular: button.size.regular,
     small: button.size.small,
-    /**
-     * Only used in Pagination.
-     * Not meant for general use.
-     */
-    pagination: button.size.pagination,
   }
   const iconSizeStyles = {
     larger: button.size.icon.larger,
     large: button.size.icon.large,
     regular: button.size.icon.regular,
     small: button.size.icon.small,
-    pagination: button.size.icon.regular,
   }
   const iconStyle = button.icon[size]
   const layoutStyles = {
@@ -143,37 +136,26 @@ const Button = React.forwardRef<Ref, ButtonProps>(function Button(props, ref) {
     link: button.link.disabled,
   }
 
-  /**
-   * Only used in DropdownItem.
-   * Not meant for general use.
-   */
-  const dropdownItemStyle = button.dropdownItem.base
-
-  const buttonStyles =
-    layout === '__dropdownItem'
-      ? classNames(dropdownItemStyle, className)
-      : classNames(
-          baseStyle,
-          // has icon but no children
-          hasIcon() && !children && iconSizeStyles[size],
-          // has icon and children
-          hasIcon() && children && sizeStyles[size],
-          // does not have icon
-          !hasIcon() && sizeStyles[size],
-          layoutStyles[layout],
-          accentStyles[layout],
-          disabled ? disabledStyles[layout] : activeStyles[layout],
-          block ? blockStyle : null,
-          className
-        )
-
   const iconLeftStyles = classNames(iconStyle, children ? button.icon.left : '')
   const iconRightStyles = classNames(iconStyle, children ? button.icon.right : '')
 
   return React.createElement(
     tag,
     {
-      className: buttonStyles,
+      className: classNames(
+        baseStyle,
+        // has icon but no children
+        hasIcon() && !children && iconSizeStyles[size],
+        // has icon and children
+        hasIcon() && children && sizeStyles[size],
+        // does not have icon
+        !hasIcon() && sizeStyles[size],
+        layoutStyles[layout],
+        accentStyles[layout],
+        disabled ? disabledStyles[layout] : activeStyles[layout],
+        block ? blockStyle : null,
+        className
+      ),
       ref,
       disabled,
       type,

@@ -212,25 +212,6 @@ describe('Link Button', () => {
   })
 })
 
-describe('DropdownItem Button', () => {
-  it('should contain DropdowItem button classes', () => {
-    const expected =
-      'inline-flex items-center cursor-pointer w-full px-2 py-1 text-sm font-medium transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200'
-    const wrapper = mount(<Button aria-label="test" layout="__dropdownItem" />)
-
-    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
-  })
-})
-
-describe('Pagination Button', () => {
-  it('should contain PageButton classes', () => {
-    const expected = 'px-3 py-1 rounded-md text-xs'
-    const wrapper = mount(<Button aria-label="test" size="pagination" />)
-
-    expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expected)
-  })
-})
-
 describe('Icon', () => {
   it('should contain an svg as a children', () => {
     const wrapper = mount(
