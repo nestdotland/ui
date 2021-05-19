@@ -1,0 +1,10 @@
+*.log
+*.lock
+LICENSE
+node_modules
+dist
+dev
+coverage
+lib
+style/output.css
+storybook-static
