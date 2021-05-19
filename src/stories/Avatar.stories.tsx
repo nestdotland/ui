@@ -11,8 +11,8 @@ export default {
 
 const Template: Story<AvatarProps> = (args) => <Avatar {...args} />
 
-export const Basic = Template.bind({})
-Basic.args = {
+export const Default = Template.bind({})
+Default.args = {
   size: 'large',
   src: "https://deno.land/images/hashrock_simple.png",
   alt: 'Profile image',

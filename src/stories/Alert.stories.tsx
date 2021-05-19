@@ -11,8 +11,8 @@ export default {
 
 const Template: Story<AlertProps> = (args) => <Alert {...args} />
 
-export const Basic = Template.bind({})
-Basic.args = {
+export const Default = Template.bind({})
+Default.args = {
   children: 'This is an alert with a close button.',
   type: 'neutral',
 }

@@ -4,21 +4,20 @@ import { ThemeContext } from './context/ThemeContext'
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
-   * Removes default styles (if true) so you can override with your own background styles
+   * Set the color of the card. (no color by default)
    */
-  colored?: boolean
+  color?: 'default' | 'white' | 'black' | 'green' | 'yellow' | 'orange' | 'red' | 'blue' | 'purple'
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(function Card(props, ref) {
-  const { className, children, colored = false, ...other } = props
+  const { className, children, color = 'default', ...other } = props
   const {
     theme: { card },
   } = useContext(ThemeContext)
 
   const baseStyle = card.base
-  const uncoloredStyle = card.default
 
-  const cls = classNames(baseStyle, !colored && uncoloredStyle, className)
+  const cls = classNames(baseStyle, card.color[color], className)
 
   return (
     <div className={cls} ref={ref} {...other}>

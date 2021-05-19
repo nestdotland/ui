@@ -9,17 +9,10 @@ export default {
   component: Card,
 } as Meta
 
-const Template: Story<CardProps> = (args) => <Card {...args} />
+const Template: Story<CardProps> = (args) => <Card className="p-4 text-gray-100" {...args} />
 
-// TODO: Add composed examples with CardBody
-export const Basic = Template.bind({})
-Basic.args = {
+export const Default = Template.bind({})
+Default.args = {
   children: 'Hello',
-}
-
-export const Colored = Template.bind({})
-Colored.args = {
-  children: 'Hello',
-  colored: true,
-  className: 'bg-red-200',
+  color: 'default',
 }

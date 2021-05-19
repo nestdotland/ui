@@ -43,17 +43,17 @@ export default {
   },
   // TableBody
   tableBody: {
-    base: 'bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-gray-700 dark:text-gray-400',
+    base: 'bg-white divide-y text-gray-700',
   },
   // DropdownItem
   // this is the <li> that lives inside the Dropdown <ul>
   // you're probably looking for the dropdownItem style inside button
   dropdownItem: {
-    base: 'mb-2 last:mb-0',
+    base: 'last:mb-0 inline-flex items-center cursor-pointer w-full px-2 py-1 text-sm font-medium transition-colors duration-150 hover:bg-gray-800',
   },
   // Dropdown
   dropdown: {
-    base: 'absolute w-56 p-2 mt-2 text-gray-600 bg-white border border-gray-100 rounded-lg shadow-md min-w-max-content dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700',
+    base: 'divide-y-2 divide-gray-500 overflow-hidden relative mt-1 text-gray-100 bg-gray-900 border-2 border-gray-500 rounded-lg shadow-md min-w-max-content',
     align: {
       left: 'left-0',
       right: 'right-0',
@@ -161,33 +161,42 @@ export default {
   // HelperText
   helperText: {
     base: 'text-xs',
-    valid: 'text-green-600 dark:text-green-400',
-    invalid: 'text-red-600 dark:text-red-400',
+    valid: 'text-green-600',
+    invalid: 'text-red-600',
   },
   // Card
   card: {
-    base: 'min-w-0 rounded-lg ring-1 ring-black ring-opacity-5 overflow-hidden',
-    default: 'bg-white dark:bg-gray-800',
+    base: 'min-w-0 rounded ring-1 ring-black ring-opacity-5 overflow-hidden',
+    color: {
+      default: '',
+      white: 'bg-gray-100',
+      black: 'bg-gray-900',
+      green: 'bg-green-900',
+      yellow: 'bg-yellow-900',
+      red: 'bg-red-900',
+      orange: 'bg-orange-900',
+      blue: 'bg-blue-900',
+      purple: 'bg-purple-900',
+    },
   },
   cardBody: {
     base: 'p-4',
   },
   // Button
   button: {
-    base: 'align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium font-mono focus:outline-none',
+    base: 'align-bottom inline-flex items-center justify-center cursor-pointer leading-0 transition-colors duration-150 font-medium font-mono focus:outline-none',
     block: 'w-full',
     size: {
-      larger: 'px-10 py-4 rounded-lg',
-      large: 'px-5 py-3 rounded-lg',
-      regular: 'px-4 py-2 rounded-lg text-sm',
-      small: 'px-3 py-1 rounded-md text-sm',
+      larger: 'px-8 py-4 rounded-lg text-2xl',
+      large: 'px-6 py-3 rounded-lg text-xl',
+      regular: 'px-4 py-2 rounded-lg',
+      small: 'px-2 py-1 rounded-md text-sm',
       icon: {
         larger: 'p-4 rounded-lg',
         large: 'p-3 rounded-lg',
         regular: 'p-2 rounded-lg',
         small: 'p-2 rounded-md',
       },
-      pagination: 'px-3 py-1 rounded-md text-xs',
     },
     // styles applied to the SVG icon
     icon: {
@@ -199,9 +208,13 @@ export default {
       right: 'ml-2 -mr-1',
     },
 
+    blank: {
+      base: ''
+    },
+
     primary: {
-      base: 'border border-transparent',
-      active: 'focus:ring focus:ring-gray-200',
+      base: 'border-2 border-transparent',
+      active: 'focus:ring focus:ring-gray-600',
       disabled: 'opacity-50 cursor-not-allowed',
       accent: {
         gray: 'text-gray-900 bg-gray-100 active:bg-gray-100 hover:bg-gray-200',
@@ -214,8 +227,8 @@ export default {
       },
     },
     outline: {
-      base: 'border focus:outline-none',
-      active: 'bg-gray-800 active:bg-gray-800 hover:bg-gray-700 border-gray-500 focus:ring focus:ring-gray-300',
+      base: 'border-2 focus:outline-none',
+      active: 'focus:ring focus:ring-gray-600 bg-gray-800 active:bg-gray-800 hover:bg-gray-700 border-gray-500',
       disabled: 'opacity-50 cursor-not-allowed bg-gray-300',
       accent: {
         gray: 'text-gray-100 hover:border-gray-100',
@@ -229,7 +242,7 @@ export default {
     },
     link: {
       base: 'bg-gray-800 focus:outline-none border border-transparent',
-      active: 'active:bg-gray-800 hover:bg-gray-700 focus:ring focus:ring-gray-300',
+      active: 'focus:ring focus:ring-gray-600 active:bg-gray-800 hover:bg-gray-700',
       disabled: 'opacity-50 cursor-not-allowed',
       accent: {
         gray: 'text-gray-200',
@@ -240,10 +253,6 @@ export default {
         blue: 'text-blue-400',
         purple: 'text-purple-400',
       },
-    },
-    // this is the button that lives inside the DropdownItem
-    dropdownItem: {
-      base: 'inline-flex items-center cursor-pointer w-full px-2 py-1 text-sm font-medium transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200',
     },
   },
 }

@@ -11,8 +11,8 @@ export default {
 
 const Template: Story<BadgeProps> = (args) => <Badge {...args} />
 
-export const Basic = Template.bind({})
-Basic.args = {
+export const Default = Template.bind({})
+Default.args = {
   children: 'text',
   color: 'gray',
   type: 'dark'

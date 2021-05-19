@@ -23,4 +23,4 @@ const Template: Story<BackdropProps> = (args) => {
   )
 }
 
-export const Basic = Template.bind({})
+export const Default = Template.bind({})
