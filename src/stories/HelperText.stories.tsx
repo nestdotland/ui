@@ -11,14 +11,8 @@ export default {
 
 const Template: Story<HelperTextProps> = (args) => <HelperText {...args} />
 
-export const Basic = Template.bind({})
-Basic.args = {
+export const Default = Template.bind({})
+Default.args = {
   children: 'Helper text used with inputs.',
-  valid: undefined,
-}
-
-export const WithValidation = Template.bind({})
-WithValidation.args = {
-  children: 'Helper text used with inputs.',
-  valid: true,
+  valid: null,
 }

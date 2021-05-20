@@ -160,9 +160,9 @@ export default {
   },
   // HelperText
   helperText: {
-    base: 'text-xs',
-    valid: 'text-green-600',
-    invalid: 'text-red-600',
+    base: 'text-xs text-gray-100',
+    valid: 'text-green-400',
+    invalid: 'text-red-400',
   },
   // Card
   card: {
