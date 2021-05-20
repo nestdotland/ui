@@ -14,11 +14,12 @@ export interface InputProps extends React.ComponentPropsWithRef<'input'> {
   /**
    * Defines the type of the input
    */
-  type?: string
+  type?: 'text' | 'password' | 'radio' | 'checkbox'
+  label?: string
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(props, ref) {
-  const { valid, disabled, className, type = 'text', ...other } = props
+  const { valid, disabled, className, label, type = 'text', ...other } = props
 
   const {
     theme: { input },
@@ -29,8 +30,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(prop
   const disabledStyle = input.disabled
   const validStyle = input.valid
   const invalidStyle = input.invalid
-  const radioStyle = input.radio
-  const checkStyle = input.checkbox
 
   function hasValidation(valid: boolean | undefined) {
     return valid !== undefined
@@ -43,19 +42,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(prop
     return ''
   }
 
-  function typeStyle(type: string): string {
-    switch (type) {
-      case 'radio':
-        return radioStyle
-      case 'checkbox':
-        return checkStyle
-      default:
-        return baseStyle
-    }
-  }
-
   const cls = classNames(
-    typeStyle(type),
+    baseStyle,
+    input.type[type],
     // don't apply activeStyle if has valid or disabled
     !hasValidation(valid) && !disabled && activeStyle,
     // don't apply disabledStyle if has valid
@@ -64,7 +53,47 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(prop
     className
   )
 
-  return <input className={cls} type={type} ref={ref} disabled={disabled} {...other} />
+  switch (type) {
+    case 'text':
+      return (
+        <label className={input.wrapper[type]}>
+          <span className={input.label[type]}>{label}</span>
+          <input className={cls} type={type} ref={ref} disabled={disabled} {...other} />
+        </label>
+      )
+
+    case 'password':
+      return (
+        <label className={input.wrapper[type]}>
+          <span className={input.label[type]}>{label}</span>
+          <input className={cls} type={type} ref={ref} disabled={disabled} {...other} />
+        </label>
+      )
+
+    case 'radio':
+      return (
+        <label className={input.wrapper[type]}>
+          <input className={cls} type={type} ref={ref} disabled={disabled} {...other} />
+          <span className={input.label[type]}>{label}</span>
+        </label>
+      )
+
+    case 'checkbox':
+      return (
+        <label className={input.wrapper[type]}>
+          <input className={cls} type={type} ref={ref} disabled={disabled} {...other} />
+          <span className={input.label[type]}>{label}</span>
+        </label>
+      )
+
+    default:
+      return (
+        <label className={input.wrapper.text}>
+          <span className={input.label.text}>{label}</span>
+          <input className={cls} type={type} ref={ref} disabled={disabled} {...other} />
+        </label>
+      )
+  }
 })
 
 export default Input

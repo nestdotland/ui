@@ -145,18 +145,29 @@ export default {
   },
   // Input
   input: {
-    base: 'block w-full text-sm focus:outline-none dark:text-gray-300 leading-5 rounded-md',
-    active:
-      'focus:border-purple-400 border-gray-300 dark:border-gray-600 focus:ring focus:ring-purple-300 dark:focus:border-gray-600 dark:focus:ring-gray-300 dark:bg-gray-700',
-    disabled: 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-800',
-    valid:
-      'border-green-600 dark:bg-gray-700 focus:border-green-400 dark:focus:border-green-400 focus:ring focus:ring-green-200 dark:focus:ring-green-200',
-    invalid:
-      'border-red-600 dark:bg-gray-700 focus:border-red-400 dark:focus:border-red-400 focus:ring focus:ring-red-200 dark:focus:ring-red-200',
-    radio:
-      'text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300 focus:ring-offset-0 dark:focus:ring-gray-300',
-    checkbox:
-      'text-purple-600 form-checkbox focus:border-purple-400 focus:outline-none focus:ring focus:ring-purple-300 focus:ring-offset-0 rounded dark:focus:ring-gray-300',
+    base: 'focus:outline-none bg-gray-800 border-gray-500 border-2 rounded-md focus:ring-2 focus:ring-gray-300',
+    active: 'border-gray-600 focus:border-gray-600',
+    disabled: 'cursor-not-allowed opacity-50',
+    valid: 'border-green-500 focus:border-green-400 focus:ring-green-200',
+    invalid: 'border-red-500 focus:border-red-400 focus:ring-red-200',
+    type: {
+      text: 'text-gray-100 mt-1 block w-full leading-5',
+      password: 'text-gray-100 mt-1 block w-full leading-5',
+      radio: 'text-purple-500 form-radio focus:border-purple-400 focus:ring-offset-0 rounded-full',
+      checkbox: 'text-purple-500 form-checkbox focus:border-purple-400 focus:ring-offset-0 rounded',
+    },
+    label: {
+      text: 'text-gray-100 font-medium text-sm',
+      password: 'text-gray-100 font-medium text-sm',
+      radio: 'text-gray-100 font-medium',
+      checkbox: 'text-gray-100 font-medium',
+    },
+    wrapper: {
+      text: 'block',
+      password: 'block',
+      radio: 'space-x-2',
+      checkbox: 'space-x-2',
+    },
   },
   // HelperText
   helperText: {
@@ -209,7 +220,7 @@ export default {
     },
 
     blank: {
-      base: ''
+      base: '',
     },
 
     primary: {

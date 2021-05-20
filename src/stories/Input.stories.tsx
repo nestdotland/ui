@@ -9,17 +9,17 @@ export default {
   component: Input,
 } as Meta
 
-const Template: Story<InputProps> = (args) => <Input {...args} />
+const Template: Story<InputProps> = (args) => (
+  <form className="flex flex-col space-y-6">
+    <Input name={args.type} {...args} />
+    <Input name={args.type} {...args} />
+    <Input name={args.type} {...args} />
+  </form>
+)
 
-export const Text = Template.bind({})
-Text.args = {}
-
-export const Checkbox = Template.bind({})
-Checkbox.args = {
-  type: 'checkbox',
-}
-
-export const Radio = Template.bind({})
-Radio.args = {
-  type: 'radio',
+export const Default = Template.bind({})
+Default.args = {
+  type: 'text',
+  label: 'Input',
+  placeholder: 'Placeholder'
 }
