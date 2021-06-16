@@ -55,7 +55,7 @@ interface PageButtonProps extends ButtonAsButtonProps {
 
 export const PageButton: React.FC<PageButtonProps> = function PageButton({ page, isActive, onClick }) {
   return (
-    <Button size="pagination" layout={isActive ? 'primary' : 'link'} onClick={onClick}>
+    <Button size="small" layout={isActive ? 'primary' : 'link'} onClick={onClick}>
       {page}
     </Button>
   )

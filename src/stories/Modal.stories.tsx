@@ -9,9 +9,11 @@ export default {
   component: Modal,
 } as Meta
 
-const Template: Story<ModalProps> = (args) => <Modal {...args} />
+const Template: Story<ModalProps> = (args) => <Modal {...args} >
+  <p className="text-gray-100">Basic label</p>
+</Modal>
 
 export const Basic = Template.bind({})
 Basic.args = {
-  children: 'Basic label',
+  isOpen: true
 }
