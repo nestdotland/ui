@@ -13,7 +13,7 @@
     "prebuild": "rimraf dist lib && npm run build:lib && npm run build:ts",
     "build": "webpack",
     "build:ts": "tsc --declaration --declarationMap --emitDeclarationOnly",
-    "build:tailwind": "tailwindcss build style/tailwind.css -o style/output.css -c style/tailwind.config.js",
+    "build:tailwind": "tailwindcss build -i style/tailwind.css -o style/output.css -c style/tailwind.config.js",
     "build:lib": "babel src/themes/default.ts --out-file lib/defaultTheme.js",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -29,7 +29,7 @@
     "presb": "npm run build:tailwind",
     "sb": "start-storybook -p 6006",
     "sb:export": "npm run build:tailwind && build-storybook",
-    "sb:serve": "serve storybook-static",
+    "sb:serve": "npm run sb:export && serve storybook-static",
     "cz": "git-cz"
   },
   "peerDependencies": {
