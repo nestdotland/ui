@@ -2,10 +2,6 @@ name: Ship
 
 on:
   workflow_dispatch:
-    inputs:
-      version:
-        description: New Version
-        required: true
 
 jobs:
   build:
@@ -51,6 +47,6 @@ jobs:
         run: yarn install --check-files --frozen-lockfile
 
       - name: Publish
-        run: yarn release ${{ github.event.inputs.version }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
