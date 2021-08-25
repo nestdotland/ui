@@ -1,6 +1,6 @@
 {
   "name": "@nestdotland/ui",
-  "version": "0.1.0-test.6",
+  "version": "0.1.0-test.5",
   "author": "Maximous Black",
   "license": "MIT",
   "main": "dist/index.js",
@@ -24,7 +24,8 @@
     "size": "size-limit",
     "size:analyze": "size-limit --why",
     "sb": "start-storybook -p 6006",
-    "sb:build": "build-storybook --output-dir static"
+    "sb:build": "build-storybook --output-dir static",
+    "release": "yarn build && yarn publish --access public --non-interactive --new-version"
   },
   "husky": {
     "hooks": {

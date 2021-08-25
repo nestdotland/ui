@@ -1,0 +1,56 @@
+name: Ship
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: New Version
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: yarn install --check-files --frozen-lockfile
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Lint
+        run: yarn fmt
+
+      - name: Test
+        run: yarn test
+
+      - name: Build
+        run: yarn build
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install Depedencies
+        run: yarn install --check-files --frozen-lockfile
+
+      - name: Publish
+        run: yarn release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

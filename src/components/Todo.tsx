@@ -1,6 +1,6 @@
 import React, { FC, HTMLAttributes, ReactChild } from "react";
 
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface TodoProps extends HTMLAttributes<HTMLDivElement> {
   /** custom content, defaults to 'TODO(@maximousblk): create components' */
   children?: ReactChild;
 }
@@ -10,6 +10,6 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
 /**
  * A custom Todo component. Neat!
  */
-export const Todo: FC<Props> = ({ children }) => {
+export const Todo: FC<TodoProps> = ({ children }) => {
   return <div>{children || `TODO(@maximousblk): create components`}</div>;
 };

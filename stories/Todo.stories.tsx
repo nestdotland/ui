@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { Todo, Props } from "../src";
+import { Todo, TodoProps } from "../";
 
 const meta: Meta = {
   title: "Todo",
@@ -19,7 +19,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<Props> = (args) => <Todo {...args} />;
+const Template: Story<TodoProps> = (args) => <Todo {...args} />;
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
