@@ -1,4 +1,4 @@
-name: Build
+name: built
 
 on:
   push:
@@ -6,13 +6,13 @@ on:
 
 jobs:
   build:
-    name: build / node@${{ matrix.node }}
+    name: node@${{ matrix.node }}
 
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        node: ['12.x', '14.x', '16.x']
+        node: ["12.x", "14.x", "16.x"]
 
     steps:
       - name: Checkout repo

@@ -1,5 +1,7 @@
 <p align="center">
-  <img align="center" height="120" src="./.github/assets/banner.svg">
+  <a  href="https://ui.nest.land/">
+    <img align="center" height="120" src="./.github/assets/banner.svg">
+  </a>
 </p>
 
 Custom Chakra UI theme and components for Nest.
