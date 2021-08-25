@@ -1,7 +1,7 @@
 {
   "name": "@nestdotland/ui",
   "version": "0.1.0-test.5",
-  "author": "Maximous Black",
+  "description": "Custom Chakra UI theme and components for Nest.",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/ui.esm.js",
@@ -10,6 +10,14 @@
     "dist",
     "src"
   ],
+  "homepage": "https://ui.nest.land/",
+  "repository": "https://github.com/nestdotland/ui",
+  "bugs": "https://github.com/nestdotland/ui/issues/new/choose",
+  "author": {
+    "name": "Maximous Black",
+    "email": "maximousblk@gmail.com",
+    "url": "http://maximousblk.me/"
+  },
   "engines": {
     "node": ">=12"
   },
@@ -25,7 +33,7 @@
     "size:analyze": "size-limit --why",
     "sb": "start-storybook -p 6006",
     "sb:build": "build-storybook --output-dir static",
-    "release": "yarn build && yarn publish --access public --non-interactive --new-version"
+    "release": "yarn publish --access public --non-interactive --new-version"
   },
   "husky": {
     "hooks": {
