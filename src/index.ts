@@ -1,2 +1,2 @@
-export * from './Thing';
-export * from './theme';
+export * from "./Todo";
+export * from "./theme";
