@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: node@${{ matrix.node }}
+    name: node / ${{ matrix.node }}
 
     runs-on: ubuntu-latest
     strategy:
