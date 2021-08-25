@@ -51,6 +51,6 @@ jobs:
         run: yarn install --check-files --frozen-lockfile
 
       - name: Publish
-        run: yarn release
+        run: yarn release ${{ github.event.inputs.version }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
