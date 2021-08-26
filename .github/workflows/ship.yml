@@ -60,6 +60,8 @@ jobs:
 
       - name: Generate Release Notes
         run: deno run -Aq https://deno.land/x/ghlog@0.3.2/ghlog.ts ${{ github.repository }} -v '${{ steps.version.outputs.version }}'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Publish
         uses: JS-DevTools/npm-publish@v1
