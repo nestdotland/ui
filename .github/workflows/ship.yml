@@ -2,10 +2,11 @@ name: ship
 
 on:
   workflow_dispatch:
-    draft:
-      description: Draft
-      required: false
-      default: "true"
+    inputs:
+      draft:
+        description: Draft
+        required: false
+        default: 'true'
 
 jobs:
   build:
@@ -71,8 +72,8 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1
         with:
-          tag: "${{ steps.publish.outputs.version }}"
-          name: "v${{ steps.publish.outputs.version }}"
-          bodyFile: "CHANGELOG.md"
+          tag: '${{ steps.publish.outputs.version }}'
+          name: 'v${{ steps.publish.outputs.version }}'
+          bodyFile: 'CHANGELOG.md'
           draft: ${{ github.event.inputs.draft }}
           token: ${{ github.token }}
