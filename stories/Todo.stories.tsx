@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { Todo, TodoProps } from "../";
+import { Todo, TodoProps } from "../src";
 
 const meta: Meta = {
   title: "Todo",

@@ -7,6 +7,9 @@
   "module": "dist/ui.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
     "dist",
     "src"
   ],
@@ -22,10 +25,11 @@
     "node": ">=12"
   },
   "scripts": {
+    "all": "yarn fmt && yarn lint && yarn build && yarn test && yarn size && yarn sb:build",
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint src test",
     "fmt": "prettier --check .",
     "fmt:fix": "prettier --write .",
     "prepare": "tsdx build",
@@ -43,22 +47,26 @@
   "size-limit": [
     {
       "path": "dist/ui.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "200 KB"
     },
     {
       "path": "dist/ui.esm.js",
-      "limit": "10 KB"
+      "limit": "50 KB"
     }
   ],
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.6",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "@fontsource/inter": "^4.5.0",
+    "@fontsource/jetbrains-mono": "^4.5.0",
     "framer-motion": "^4.1.17"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@size-limit/preset-small-lib": "^5.0.3",
+    "@storybook/addon-a11y": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-links": "^6.3.7",
@@ -74,6 +82,7 @@
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
     "size-limit": "^5.0.3",
+    "storybook-addon-performance": "^0.16.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
     "typescript": "^4.3.5"

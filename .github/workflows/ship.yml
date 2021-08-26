@@ -1,7 +1,11 @@
-name: Ship
+name: ship
 
 on:
   workflow_dispatch:
+    draft:
+      description: Draft
+      required: false
+      default: "true"
 
 jobs:
   build:
@@ -43,10 +47,32 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
 
+      - name: Setup Deno
+        uses: denolib/setup-deno@v2
+
+      - name: Get package Version
+        id: version
+        run: echo ::set-output name=version::$(node -p "require('./package.json').version")
+
       - name: Install Depedencies
         run: yarn install --check-files --frozen-lockfile
 
+      - name: Generate Release Notes
+        run: deno run -Aq https://deno.land/x/ghlog@0.3.2/ghlog.ts ${{ github.repository }} -v '${{ steps.version.outputs.version }}'
+
       - name: Publish
         uses: JS-DevTools/npm-publish@v1
+        id: publish
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          access: public
+          dry-run: ${{ github.event.inputs.draft }}
+
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "${{ steps.publish.outputs.version }}"
+          name: "v${{ steps.publish.outputs.version }}"
+          bodyFile: "CHANGELOG.md"
+          draft: ${{ github.event.inputs.draft }}
+          token: ${{ github.token }}
