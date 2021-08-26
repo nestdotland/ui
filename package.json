@@ -1,6 +1,6 @@
 {
   "name": "@nestdotland/ui",
-  "version": "0.1.0-test.8",
+  "version": "0.1.0-test.9",
   "description": "Custom Chakra UI theme and components for Nest.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -26,6 +26,7 @@
   },
   "scripts": {
     "all": "yarn fmt && yarn lint && yarn build && yarn test && yarn size && yarn sb:build",
+    "clean": "rimraf dist node_modules static CHANGELOG.md",
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
@@ -81,6 +82,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
+    "rimraf": "^3.0.2",
     "size-limit": "^5.0.3",
     "storybook-addon-performance": "^0.16.1",
     "tsdx": "^0.14.1",
