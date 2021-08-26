@@ -9,7 +9,5 @@ export interface TodoProps extends HTMLAttributes<HTMLDivElement> {
  * Add Custom Components
  */
 export const Todo: FC<TodoProps> = ({ children }) => {
-  return (
-    <p>TODO(@maximousblk): {children || `create components`}</p>
-  );
+  return <p>TODO(@maximousblk): {children || `create components`}</p>;
 };
