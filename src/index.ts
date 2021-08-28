@@ -1,2 +1,2 @@
-export * from "./components/Todo";
+export * from "./components";
 export * from "./theme";

@@ -27,8 +27,8 @@
   "scripts": {
     "all": "yarn fmt && yarn lint && yarn build && yarn test && yarn size && yarn sb:build",
     "clean": "rimraf dist node_modules static CHANGELOG.md",
-    "start": "tsdx watch",
-    "build": "tsdx build",
+    "start": "tsdx watch --format esm",
+    "build": "tsdx build --format esm",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint src test",
     "fmt": "prettier --check .",
