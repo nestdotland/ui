@@ -22,18 +22,18 @@
     "url": "http://maximousblk.me/"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "scripts": {
     "all": "yarn fmt && yarn lint && yarn build && yarn test && yarn size && yarn sb:build",
-    "clean": "rimraf dist node_modules static CHANGELOG.md",
-    "start": "tsdx watch --format esm",
-    "build": "tsdx build --format esm",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint src test",
+    "clean": "rimraf dist static node_modules CHANGELOG.md",
+    "start": "dts watch --format esm",
+    "build": "dts build --format esm",
+    "test": "dts test --passWithNoTests",
+    "lint": "dts lint src test",
     "fmt": "prettier --check .",
     "fmt:fix": "prettier --write .",
-    "prepare": "tsdx build",
+    "prepare": "yarn build",
     "size": "size-limit",
     "size:analyze": "size-limit --why",
     "sb": "start-storybook -p 6006",
@@ -42,8 +42,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "dts lint"
     }
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "size-limit": [
     {
@@ -53,7 +56,7 @@
   ],
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
-    "@chakra-ui/react": "^1.6.6",
+    "@chakra-ui/react": "^1.6.7",
     "@chakra-ui/theme-tools": "^1.2.0",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
@@ -63,31 +66,31 @@
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
+    "@babel/core": "^7.15.5",
     "@size-limit/preset-small-lib": "^5.0.3",
-    "@storybook/addon-a11y": "^6.3.7",
-    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-a11y": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.3.7",
-    "@storybook/addons": "^6.3.7",
-    "@storybook/react": "^6.3.7",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/addons": "^6.3.8",
+    "@storybook/react": "^6.3.8",
     "@storybook/theming": "^6.3.8",
     "@svgr/webpack": "^5.5.0",
-    "@types/react": "^17.0.19",
+    "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "babel-loader": "^8.2.2",
+    "dts-cli": "^0.17.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.2",
-    "prettier": "^2.3.2",
+    "prettier": "^2.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
     "rimraf": "^3.0.2",
     "size-limit": "^5.0.3",
     "storybook-addon-performance": "^0.16.1",
-    "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.3"
   },
   "peerDependencies": {
     "react": ">=16"
