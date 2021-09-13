@@ -13,9 +13,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<StatusProps> = (args) => (
-  <Status status="normal" {...args} />
-);
+const Template: Story<StatusProps> = (args) => <Status {...args} />;
 
 export const Default = Template.bind({});
 
