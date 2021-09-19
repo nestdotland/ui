@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { Status, StatusProps } from "../src";
+import { Status, StatusProps } from "..";
 
 const meta: Meta = {
   title: "Status",

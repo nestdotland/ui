@@ -15,10 +15,11 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { IconType } from "react-icons";
 import Logo from "./Logo";
 
-export interface NavbarProps extends HTMLChakraProps<"header"> {
+export interface NavbarProps extends HTMLChakraProps<"nav"> {
   pages: {
     name: string;
     link: string;
+    active?: boolean;
   }[];
   socials: {
     name: string;
@@ -35,9 +36,7 @@ export function Navbar({ pages, socials, ...props }: NavbarProps) {
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
 
   return (
-    <chakra.header
-      shadow="sm"
-      transition="box-shadow 0.2s, background-color 0.2s"
+    <chakra.nav
       pos="sticky"
       top="0"
       zIndex="3"
@@ -70,16 +69,13 @@ export function Navbar({ pages, socials, ...props }: NavbarProps) {
                 as="a"
                 key={page.link}
                 href={page.link}
-                variant="ghost"
-                color="current"
+                variant={page.active ? undefined : "ghost"}
+                color={page.active ? undefined : "current"}
+                colorScheme={page.active ? "primary" : undefined}
               >
                 {page.name}
               </Button>
             ))}
-
-            <Button as="a" href="/login" colorScheme="primary">
-              Login
-            </Button>
 
             {socials.map((social) => (
               <Link
@@ -108,6 +104,6 @@ export function Navbar({ pages, socials, ...props }: NavbarProps) {
           </ButtonGroup>
         </Flex>
       </Flex>
-    </chakra.header>
+    </chakra.nav>
   );
 }
