@@ -1,11 +1,12 @@
 import React from "react";
 import * as ReactDOM from "react-dom";
-import { Default as Button } from "../stories/Button.stories";
+import { Default as Header } from "../src/stories/Header.stories";
 
-describe("Button", () => {
+describe("Header", () => {
   it("renders without failing", () => {
     const div = document.createElement("div");
-    ReactDOM.render(<Button />, div);
+    ReactDOM.render(<Header />, div);
     ReactDOM.unmountComponentAtNode(div);
+    expect(<Header />).toMatchSnapshot();
   });
 });

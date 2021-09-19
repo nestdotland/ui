@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders without failing 1`] = `
+<bound Template
+  pages={
+    Array [
+      Object {
+        "link": "#modules",
+        "name": "Modules",
+      },
+      Object {
+        "link": "#blog",
+        "name": "Blog",
+      },
+      Object {
+        "link": "#docs",
+        "name": "Docs",
+      },
+      Object {
+        "active": true,
+        "link": "#login",
+        "name": "Login",
+      },
+    ]
+  }
+  socials={
+    Array [
+      Object {
+        "icon": [Function],
+        "link": "#github",
+        "name": "GitHub",
+      },
+      Object {
+        "icon": [Function],
+        "link": "#discord",
+        "name": "Discord",
+      },
+    ]
+  }
+/>
+`;

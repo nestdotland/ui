@@ -51,7 +51,7 @@
   "size-limit": [
     {
       "path": "dist/ui.esm.js",
-      "limit": "50 KB"
+      "limit": "100 KB"
     }
   ],
   "dependencies": {

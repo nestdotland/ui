@@ -5,14 +5,14 @@ import { SiGithub, SiDiscord } from "react-icons/si";
 
 const config = {
   pages: [
-    { name: "Modules", link: "#" },
-    { name: "Blog", link: "#" },
-    { name: "Docs", link: "#" },
-    { name: "Login", link: "#", active: true },
+    { name: "Modules", link: "#modules" },
+    { name: "Blog", link: "#blog" },
+    { name: "Docs", link: "#docs" },
+    { name: "Login", link: "#login", active: true },
   ],
   socials: [
-    { name: "GitHub", link: "#", icon: SiGithub },
-    { name: "Discord", link: "#", icon: SiDiscord },
+    { name: "GitHub", link: "#github", icon: SiGithub },
+    { name: "Discord", link: "#discord", icon: SiDiscord },
   ],
 };
 
@@ -26,8 +26,8 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<NavbarProps> = (args) => <Navbar {...config} {...args} />;
+const Template: Story<NavbarProps> = (args) => <Navbar {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = { ...config };

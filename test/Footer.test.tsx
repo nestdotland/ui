@@ -1,12 +1,12 @@
 import React from "react";
 import * as ReactDOM from "react-dom";
-import { Default as Status } from "../src/stories/Status.stories";
+import { Default as Footer } from "../src/stories/Footer.stories";
 
-describe("Status", () => {
+describe("Footer", () => {
   it("renders without failing", () => {
     const div = document.createElement("div");
-    ReactDOM.render(<Status status="normal" />, div);
+    ReactDOM.render(<Footer />, div);
     ReactDOM.unmountComponentAtNode(div);
-    expect(<Status status="normal" />).toMatchSnapshot();
+    expect(<Footer />).toMatchSnapshot();
   });
 });
