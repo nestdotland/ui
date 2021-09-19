@@ -1,6 +1,6 @@
 {
   "name": "@nestdotland/ui",
-  "version": "0.1.0-test.10",
+  "version": "0.1.0-test.11",
   "description": "Custom Chakra UI theme and components for Nest.",
   "license": "MIT",
   "main": "dist/index.js",
