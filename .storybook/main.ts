@@ -15,6 +15,7 @@ module.exports = {
   ],
   typescript: {
     check: true,
+    reactDocgen: false,
   },
   webpackFinal: async (config) => {
     config.resolve.extensions.push(".svg");

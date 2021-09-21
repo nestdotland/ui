@@ -1,5 +1,6 @@
 import { create } from "@storybook/theming";
 import { theme } from "../src";
+// @ts-ignore
 import logo from "../.github/assets/banner.svg";
 
 export default create({
