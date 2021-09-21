@@ -36,7 +36,7 @@ export function Footer(props: FooterProps) {
       <Flex
         as="a"
         align="center"
-        href="https://vercel.com?utm_source=nest_land"
+        href="https://vercel.com/?utm_source=nest-land&utm_campaign=oss"
         target="_blank"
         rel="noopener noreferrer"
       >
