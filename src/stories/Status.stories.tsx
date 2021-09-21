@@ -5,7 +5,12 @@ import { Status, StatusProps } from "..";
 const meta: Meta = {
   title: "Status",
   component: Status,
-
+  argTypes: {
+    status: {
+      control: { type: "radio" },
+      options: ["normal", "degraded", "partial", "down"],
+    },
+  },
   args: {
     status: "normal",
   },
