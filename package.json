@@ -82,7 +82,7 @@
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "babel-loader": "^8.2.2",
-    "dts-cli": "^0.17.0",
+    "dts-cli": "^0.19.2",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.2",
     "prettier": "^2.4.0",
