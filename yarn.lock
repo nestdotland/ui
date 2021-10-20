@@ -1627,12 +1627,20 @@
     "@chakra-ui/form-control" "1.4.1"
     "@chakra-ui/utils" "1.8.2"
 
-"@chakra-ui/theme-tools@1.2.1", "@chakra-ui/theme-tools@^1.2.0", "@chakra-ui/theme-tools@^1.2.1":
+"@chakra-ui/theme-tools@1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-1.2.1.tgz#940b169f54e1229da419fb644b215e1d41a724ae"
   integrity sha512-e3Ql6SJyog7Rrk6DWUGyxzkzyAukodGIbH5DxTp9tLq10UhxZyGOYUQe7m/wL6XQ2zRQSIzcgvqWdTbxtkiwug==
   dependencies:
     "@chakra-ui/utils" "1.8.2"
+    "@ctrl/tinycolor" "^3.4.0"
+
+"@chakra-ui/theme-tools@^1.2.0", "@chakra-ui/theme-tools@^1.2.1":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-1.2.2.tgz#22feef17ee764f5989235c29f5ee3ffd25066f3a"
+  integrity sha512-+2xPTW7/rFr++Qu/ibZsM1dq5qmvvjg6+Af4SRZw1AvjGq4CTxuV7upXo5zJM3Q3OgzOtU9Q9RATap3fhEHkyA==
+  dependencies:
+    "@chakra-ui/utils" "1.8.3"
     "@ctrl/tinycolor" "^3.4.0"
 
 "@chakra-ui/theme@1.10.2":
@@ -1676,7 +1684,7 @@
   dependencies:
     "@chakra-ui/utils" "1.8.2"
 
-"@chakra-ui/utils@1.8.2", "@chakra-ui/utils@^1.7.0":
+"@chakra-ui/utils@1.8.2":
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/@chakra-ui/utils/-/utils-1.8.2.tgz#5a9f1f67c5f2232769fe7d009fcf96eebf3c2b4e"
   integrity sha512-MnE4czCQCE87Ch1DfAdmZvObgRviw9wQ9Zti372P8VD1ILEdff/C5WBWHW6mgG3YcorPAxgnrNF3MmNE95jRkA==
@@ -1686,7 +1694,7 @@
     framesync "5.3.0"
     lodash.mergewith "4.6.2"
 
-"@chakra-ui/utils@1.8.3":
+"@chakra-ui/utils@1.8.3", "@chakra-ui/utils@^1.7.0":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@chakra-ui/utils/-/utils-1.8.3.tgz#4eb6da7d772e483376ca47afeaf54cd453432340"
   integrity sha512-v184c2TYwQYBEcDI/9C1DjN668jZVTJeb/DPtucAjEHNi4T0py3tjGDbUd05LoNoZ64uijtWYanfrr6Abe4m1Q==
@@ -2612,7 +2620,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-actions@6.3.9", "@storybook/addon-actions@^6.3.8":
+"@storybook/addon-actions@6.3.9":
   version "6.3.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.3.9.tgz#dd4b834b7734bc4c19142cf623b665f02e2d38b9"
   integrity sha512-r02sSxkd2csKb69PVi8541e6hYGJ+FXOEBUnvLPyf5IULs7tRWPJekNd6cHxP1hoUBnmmj2f8CXmmbsXzr6rrQ==
@@ -2623,6 +2631,29 @@
     "@storybook/components" "6.3.9"
     "@storybook/core-events" "6.3.9"
     "@storybook/theming" "6.3.9"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.20"
+    polished "^4.0.5"
+    prop-types "^15.7.2"
+    react-inspector "^5.1.0"
+    regenerator-runtime "^0.13.7"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+    uuid-browser "^3.1.0"
+
+"@storybook/addon-actions@^6.3.8":
+  version "6.3.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.3.12.tgz#69eb5f8f780f1b00456051da6290d4b959ba24a0"
+  integrity sha512-mzuN4Ano4eyicwycM2PueGzzUCAEzt9/6vyptWEIVJu0sjK0J9KtBRlqFi1xGQxmCfimDR/n/vWBBkc7fp2uJA==
+  dependencies:
+    "@storybook/addons" "6.3.12"
+    "@storybook/api" "6.3.12"
+    "@storybook/client-api" "6.3.12"
+    "@storybook/components" "6.3.12"
+    "@storybook/core-events" "6.3.12"
+    "@storybook/theming" "6.3.12"
     core-js "^3.8.2"
     fast-deep-equal "^3.1.3"
     global "^4.4.0"
