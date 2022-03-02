@@ -10,8 +10,7 @@
     "README.md",
     "CHANGELOG.md",
     "LICENSE",
-    "dist",
-    "src"
+    "dist"
   ],
   "homepage": "https://ui.nest.land/",
   "repository": "https://github.com/nestdotland/ui",
@@ -27,8 +26,8 @@
   "scripts": {
     "all": "yarn fmt && yarn lint && yarn build && yarn test && yarn size && yarn sb:build",
     "clean": "rimraf dist static node_modules CHANGELOG.md",
-    "start": "dts watch --format esm",
-    "build": "dts build --format esm",
+    "start": "dts watch",
+    "build": "dts build",
     "test": "dts test --passWithNoTests",
     "lint": "dts lint src test",
     "fmt": "prettier --check .",
@@ -50,7 +49,8 @@
   },
   "size-limit": [
     {
-      "path": "dist/ui.esm.js"
+      "path": "dist/ui.esm.js",
+      "limit": "64 KB"
     }
   ],
   "dependencies": {
